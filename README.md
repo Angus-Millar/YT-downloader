@@ -1,2 +1,5 @@
 # YT-downloader
-Python code to download YT playlists or videos as audio or video.
+
+Download YouTube playlists and videos to your computer as audio or video files with this simple Python tool.
+
+# Requirements:
