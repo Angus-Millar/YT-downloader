@@ -15,7 +15,7 @@
                          |_____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|\___|_|   
 
 ```
-      Download YouTube playlists/videos to your computer as audio (mp3) or video (mp4) files with this Python tool.
+      Download YouTube playlists/videos as audio (mp3) or video (mp4) files with this Python tool.
 
 # Requirements:
 
