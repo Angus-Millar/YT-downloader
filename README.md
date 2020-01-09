@@ -25,7 +25,7 @@ Install the folowing:
  
  :white_check_mark: [youtube_dl](https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme)
  
- :white_check_mark: [ffmpeg (Windows)](https://m.wikihow.com/Install-FFmpeg-on-Windows)        or                                                                                                                                                        [ffmpeg (Mac)](http://jollejolles.com/install-ffmpeg-on-mac-os-x/)
+ :white_check_mark: [ffmpeg (Windows)](https://m.wikihow.com/Install-FFmpeg-on-Windows) /                                                                                                                                                      [ffmpeg (Mac)](http://jollejolles.com/install-ffmpeg-on-mac-os-x/) / [ffmpeg (Linux)](https://www.ostechnix.com/install-ffmpeg-linux/)
        
 # Usage:
 how to
