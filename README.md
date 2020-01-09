@@ -29,4 +29,6 @@ Install the folowing:
        
 # Usage:
 To run from the command line:
-:arrow_forward: python vid_dld.py <YT playlist or video URL> <(mp3 or mp4)>
+```
+python YT_download.py <YT playlist or video URL> <(mp3 or mp4)>
+```
