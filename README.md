@@ -18,10 +18,12 @@
       Download YouTube playlists/videos to your computer as audio or video files with this Python tool.
 
 # Requirements:
+
 Install the folowing:
-Python - https://realpython.com/installing-python/
-youtube_dl - https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
-ffmpeg - https://m.wikihow.com/Install-FFmpeg-on-Windows (Windows)
+
+ - Python - https://realpython.com/installing-python/
+ - youtube_dl - https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
+ - ffmpeg - https://m.wikihow.com/Install-FFmpeg-on-Windows (Windows)
        - http://jollejolles.com/install-ffmpeg-on-mac-os-x/ (Mac)
        
 # Usage:
