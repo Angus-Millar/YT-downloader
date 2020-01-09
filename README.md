@@ -28,4 +28,5 @@ Install the folowing:
  :white_check_mark: [ffmpeg (Windows)](https://m.wikihow.com/Install-FFmpeg-on-Windows) /                                                                                                                                                      [ffmpeg (Mac)](http://jollejolles.com/install-ffmpeg-on-mac-os-x/) / [ffmpeg (Linux)](https://www.ostechnix.com/install-ffmpeg-linux/)
        
 # Usage:
-how to
+To run from the command line:
+:arrow_forward: python vid_dld.py <YT playlist or video URL> <FORMAT (mp3 or mp4)>
