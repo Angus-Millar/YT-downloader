@@ -9,7 +9,7 @@
     (http://jollejolles.com/install-ffmpeg-on-mac-os-x/)
 """
 
-# Usage: python vid_dld.py <YT playlist URL> <FORMAT (mp3 or mp4)>
+# Usage: python YT_download.py <YT playlist URL> <FORMAT (mp3 or mp4)>
 
 from __future__ import unicode_literals
 from youtube_dl import YoutubeDL
@@ -21,7 +21,7 @@ import platform
 # Get playlist/video URL and desired download format
 def get_URL():
     if len(sys.argv) != 3:
-        sys.exit("\nWrong no. of arguments! Usage: python " + sys.argv[0] + " <YT playlist/video URL> <format (mp3 or mp4)>\n")
+        sys.exit("\nWrong no. of arguments! \nUsage: python " + sys.argv[0] + " <YT playlist/video URL> <format (mp3 or mp4)>\n")
     else:
         URL = sys.argv[1]
         format = sys.argv[2]
