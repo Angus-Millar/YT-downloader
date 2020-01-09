@@ -15,15 +15,15 @@
                          |_____/ \___/ \_/\_/ |_| |_|_|\___/ \__,_|\__,_|\___|_|   
 
 ```
-      :arrow_down: Download YouTube playlists/videos to your computer as audio or video files with this Python tool.
+      Download YouTube playlists/videos to your computer as audio or video files with this Python tool.
 
 # Requirements:
 
 Install the folowing:
 
- - [Python](https://realpython.com/installing-python/)
- - youtube_dl - https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
- - ffmpeg - https://m.wikihow.com/Install-FFmpeg-on-Windows (Windows)
+ :white_check_mark: [Python](https://realpython.com/installing-python/)
+ :white_check_mark: youtube_dl - https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
+ :white_check_mark: ffmpeg - https://m.wikihow.com/Install-FFmpeg-on-Windows (Windows)
           - http://jollejolles.com/install-ffmpeg-on-mac-os-x/ (Mac)
        
 # Usage:
