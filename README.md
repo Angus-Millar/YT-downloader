@@ -22,9 +22,11 @@
 Install the folowing:
 
  :white_check_mark: [Python](https://realpython.com/installing-python/)
+ 
  :white_check_mark: youtube_dl - https://github.com/ytdl-org/youtube-dl/blob/master/README.md#readme
+ 
  :white_check_mark: ffmpeg - https://m.wikihow.com/Install-FFmpeg-on-Windows (Windows)
-          - http://jollejolles.com/install-ffmpeg-on-mac-os-x/ (Mac)
+                           - http://jollejolles.com/install-ffmpeg-on-mac-os-x/ (Mac)
        
 # Usage:
 how to
