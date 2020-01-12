@@ -68,7 +68,6 @@ def YT_info(URL):
             videos = [result['entries'][i]['webpage_url'].replace(",", "") for          i in range(len(result['entries']))]
     else:
         # Get info on YT video
-        print("\n ---Downloading YT video---\n")
         folder, videos = "YT_downloader", [URL]
     return folder, videos
 
@@ -80,7 +79,7 @@ if __name__ == "__main__":
     # YT playlist/video info
     folder, videos = YT_info(URL)
     # Download playlist/video into mp3 or mp4 folder
-    print("\n ---Downloading YT playlist---\n")
+    print("\n ---Downloading---\n")
     ydl_opts = dld_format(format, desktop_folder(), folder)
     with YoutubeDL(ydl_opts) as ydl:
         start = time.time()
