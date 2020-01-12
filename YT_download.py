@@ -65,7 +65,7 @@ def YT_info(URL):
         if 'entries' in result:
             # Extract playlist title and video_url
             folder = result['entries'][0]['playlist'].replace(",", "")
-            videos = [result['entries'][i]['webpage_url'].replace(",", "") for          i in range(len(result['entries']))]
+            videos = [result['entries'][i]['webpage_url'].replace(",", "") for i in range(len(result['entries']))]
     else:
         # Get info on YT video
         folder, videos = "YT_downloader", [URL]
