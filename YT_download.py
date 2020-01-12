@@ -57,15 +57,15 @@ def dld_format(format, desktop, folder):
 # Extract info/URLs from playlist/video
 def YT_info(URL):
     if "playlist" in URL:
-        # Get info on YT playlist without downloading
+        # Get info on YT playlist and delete inaccessible videos
         print("\n ---Collecting YT playlist---\n")
-        ydl_playlist_opts = {'outtmpl': '%(id)s%(ext)s', 'quiet':True,}
+        ydl_playlist_opts = {'ignoreerrors': True, 'abortonunavailablefragment': True}
         with YoutubeDL(ydl_playlist_opts) as ydl:
-            result = ydl.extract_info(URL, download=False)
-        if 'entries' in result:
-            # Extract playlist title and video_url
-            folder = result['entries'][0]['playlist'].replace(",", "")
-            videos = [result['entries'][i]['webpage_url'].replace(",", "") for i in range(len(result['entries']))]
+            full_results = ydl.extract_info(URL, download=False)
+            result = [i for i in full_results['entries'] if i is not None]
+        # Playlist title and video_urls
+        folder = result[0]['playlist'].replace(",", "")
+        videos = [result[i]['webpage_url'].replace(",", "") for i in range(len(result))]
     else:
         # Get info on YT video
         folder, videos = "YT_downloader", [URL]
