@@ -8,7 +8,6 @@
 # Requires: ffmpeg (Mac) -
     (http://jollejolles.com/install-ffmpeg-on-mac-os-x/)
 """
-
 # Usage: python YT_download.py <YT playlist URL> <FORMAT (mp3 or mp4)>
 
 from __future__ import unicode_literals
@@ -36,11 +35,11 @@ def desktop_folder():
     return desktop
         
 # mp3/mp4 formatting for dld
-def dld_format(format, playlist_title):
+def dld_format(format, desktop, folder):
     if (format == 'mp3' or format == '.mp3'):
         ydl_opts = {
             'format': 'bestaudio/best',
-            'outtmpl': '{}/{}/%(title)s.%(ext)s'.format(desktop, playlist_title),
+            'outtmpl': '{}/{}/%(title)s.%(ext)s'.format(desktop, folder),
             'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
@@ -49,7 +48,7 @@ def dld_format(format, playlist_title):
     elif (format == 'mp4' or format == '.mp4'):
         ydl_opts = {
             'format': 'best',
-            'outtmpl': '{}/{}/%(title)s.%(ext)s'.format(desktop, playlist_title),
+            'outtmpl': '{}/{}/%(title)s.%(ext)s'.format(desktop, folder),
         }
     else:
         sys.exit("\nWrong format! Valid formats: mp3 or mp4\n")
@@ -59,15 +58,14 @@ def dld_format(format, playlist_title):
 def YT_info(URL):
     if "playlist" in URL:
         # Get info on YT playlist without downloading
-        print("\n ---Collecting and downloading YT playlist---\n")
+        print("\n ---Collecting YT playlist---\n")
         ydl_playlist_opts = {'outtmpl': '%(id)s%(ext)s', 'quiet':True,}
         with YoutubeDL(ydl_playlist_opts) as ydl:
             result = ydl.extract_info(URL, download=False)
         if 'entries' in result:
             # Extract playlist title and video_url
-            for i, item in enumerate(result['entries']):
-                videos = [result['entries'][i]['webpage_url'].replace(",", "") for i in range(len(result))]
-                folder = result['entries'][0]['playlist'].replace(",", "")
+            folder = result['entries'][0]['playlist'].replace(",", "")
+            videos = [result['entries'][i]['webpage_url'].replace(",", "") for          i in range(len(result['entries']))]
     else:
         # Get info on YT video
         print("\n ---Downloading YT video---\n")
@@ -79,18 +77,14 @@ def YT_info(URL):
 if __name__ == "__main__":
     # User playlist/video URL and desired download format
     URL, format = get_URL()
-    # Playlist dld folder on desktop
-    desktop = desktop_folder()
     # YT playlist/video info
     folder, videos = YT_info(URL)
-    # Download playlist/video into mp3 or mp4
-    ydl_opts = dld_format(format, folder)
+    # Download playlist/video into mp3 or mp4 folder
+    print("\n ---Downloading YT playlist---\n")
+    ydl_opts = dld_format(format, desktop_folder(), folder)
     with YoutubeDL(ydl_opts) as ydl:
         start = time.time()
         ydl.download(videos)
         end = time.time()
-        print("\n---Time taken for download = {} seconds.---\n"
+        print("\n---Download time = {} seconds.---\n"
             .format(int(end - start)))
-    
-
-
