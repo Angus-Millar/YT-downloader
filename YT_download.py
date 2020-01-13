@@ -55,7 +55,7 @@ def dld_format(format, desktop, folder):
     return ydl_opts
 
 # Extract info/URLs from playlist/video
-def YT_info(URL):
+def yt_info(URL):
     if "playlist" in URL:
         # Get info on YT playlist and delete inaccessible videos
         print("\n ---Collecting YT playlist---\n")
@@ -77,7 +77,7 @@ if __name__ == "__main__":
     # User playlist/video URL and desired download format
     URL, format = get_URL()
     # YT playlist/video info
-    folder, videos = YT_info(URL)
+    folder, videos = yt_info(URL)
     # Download playlist/video into mp3 or mp4 folder
     print("\n ---Downloading---\n")
     ydl_opts = dld_format(format, desktop_folder(), folder)
