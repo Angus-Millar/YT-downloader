@@ -67,7 +67,7 @@ def yt_info(URL):
         folder = result[0]['playlist'].replace(",", "")
         videos = [result[i]['webpage_url'].replace(",", "") for i in range(len(result))]
     else:
-        # Get info on YT video
+        # Get info on single YT video
         folder, videos = "YT_downloader", [URL]
     return folder, videos
 
