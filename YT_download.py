@@ -56,24 +56,26 @@ def dld_format(format, desktop, folder):
 
 # Extract info/URLs from playlist/video
 def yt_info(URL):
-    if "playlist" in URL:
+    print(URL)
+    if "list" in URL:
         # Get info on YT playlist and delete inaccessible videos
         print("\n ---Collecting YT playlist---\n")
         ydl_playlist_opts = {'ignoreerrors': True, 'abortonunavailablefragment': True}
         with YoutubeDL(ydl_playlist_opts) as ydl:
             full_results = ydl.extract_info(URL, download=False)
             result = [i for i in full_results['entries'] if i is not None]
+            print(result)
         # Playlist title and video_urls
         folder = result[0]['playlist'].replace(",", "")
         videos = [result[i]['webpage_url'].replace(",", "") for i in range(len(result))]
     else:
         # Get info on single YT video
         folder, videos = "YT_downloader", [URL]
+    print(folder)
+    print(videos)
     return folder, videos
 
-
-# Code to run
-if __name__ == "__main__":
+def main():
     # User playlist/video URL and desired download format
     URL, format = get_URL()
     # YT playlist/video info
@@ -83,7 +85,12 @@ if __name__ == "__main__":
     ydl_opts = dld_format(format, desktop_folder(), folder)
     with YoutubeDL(ydl_opts) as ydl:
         start = time.time()
+        print("START")
         ydl.download(videos)
+        print("END")
         end = time.time()
         print("\n---Download time = {} seconds.---\n"
             .format(int(end - start)))
+            
+if __name__ == "__main__":
+    main()
